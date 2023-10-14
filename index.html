@@ -1,19 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Climate Recogniazance</title>
-<link rel="stylesheet" href="/Assets/style.css"
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Recon</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 </head>
 <body>
+    <div class="container">
+        <h1 class="title">Weather Recon</h1>
 
-<div class="input">
-<input type="text" class="input Value"
-<input tyoe="submit" value="Submit"
+        <div class="columns">
+            <!-- First Column (Search) -->
+            <div class="column is-one-third">
+                <div class="search">
+                    <input class="input" type="text" id="cityInput" placeholder="Enter city name">
+                    <button class="button is-primary" id="searchButton">Search</button>
+                </div>
+            </div>
 
-<script src="/Assets/script.js"></script>
-<script src="/Assets/nutrition.js"></script>
+            <!-- Second Column (Weather Info) -->
+            <div class="column is-two-thirds">
+                <div class="weather">
+                    <h2 id="cityName" class="title is-3"></h2>
+                    <div id="weatherInfo">
+                        <p>
+                            <span class="weather-icon"><i class="fas fa-thermometer-half"></i></span>
+                            <span id="temperature" class="subtitle is-5"></span>
+                        </p>
+                        <p>
+                            <span class="weather-icon"><i class="fas fa-cloud"></i></span>
+                            <span id="description" class="subtitle is-5"></span>
+                        </p>
+                        <p>
+                            <span class="weather-icon"><i class="fas fa-tint"></i></span>
+                            <span id "humidity" class="subtitle is-5"></span>
+                        </p>
+                        <p>
+                            <span class="weather-icon"><i class="fas fa-wind"></i></span>
+                            <span id="wind" class="subtitle is-5"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7 Clickable Boxes (Vertically on the Left) -->
+        <div class="column is-one-fifth">
+            <div class="box has-text-centered">
+                <p>Maryland</p>
+            </div>
+            <div class="box has-text-centered">
+                <p>Baltimore</p>
+            </div>
+            <div class="box has-text-centered">
+                <p>Virginia</p>
+            </div>
+            <div class="box has-text-centered">
+                <p>New York</p>
+            </div>
+            <div class="box has-text-centered">
+                <p>Ohio</p>
+            </div>
+            <div class="box has-text-centered">
+                <p>Michigan</p>
+            </div>
+            <div class="box has-text-centered">
+                <p>North Carolina</p>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
