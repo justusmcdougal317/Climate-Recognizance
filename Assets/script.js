@@ -1,39 +1,21 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const apiKey = '6440c5c5dab4ca3a400164ecfcf30c6e'; 
-    const searchBtn = document.getElementById('searchButton');
-    const cityInput = document.getElementById('cityInput');
-    const cityName = document.getElementById('cityName');
-    const temperature = document.getElementById('temperature');
-    const humidity = document.getElementById('humidity');
-    const wind = document.getElementById('wind');
+var button = document.querySelector('.button')
+var inputValue = document.querySelector('.inputValue')
+var name = document.querySelector('.name');
+var desc = document.querySelector('.desc');
+var temp = document.querySelector('.temp');
 
-    // Function to fetch weather data for a specific city
-    function fetchWeather(city) {
-        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+button.addEventListner('click',function(){
+ fetch(https://api.openweathermap.org/data/3.0/onecall?q='+inputValue.value+'&appid='6440c5c5dab4ca3a400164ecfcf30c6e')
+  .then(response => response.json())
+  .then(data => {
+    var nameValue = data['name'];
+    var tempValue = data['main']['temp']
+    var descValue = data['weather'][0]['description'];
+ 
+    name.innerHTML =nameValue;
+    temp.innerHTML =tempValue;
+    desc.innerHTML =descValue;
+})
 
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                cityName.textContent = data.name;
-                temperature.textContent = `Temperature: ${data.main.temp}°C`;
-                humidity.textContent = `Humidity: ${data.main.humidity}%`;
-                wind.textContent = `Wind: ${data.wind.speed} m/s`;
-            })
-            .catch(error => {
-                console.error('Error fetching weather data:', error);
-            });
-    }
 
-    // Add click event listener to the search button
-    searchBtn.addEventListener('click', function () {
-        const city = cityInput.value.trim();
-        if (city) {
-            fetchWeather(city);
-        } else {
-            alert('Please enter a city name.');
-        }
-    });
-
-    // Initial weather information when the page loads
-    fetchWeather('New York'); // Example: Fetch weather for New York by default
-});
+  .catch(err => alert("Wrong city name!"))
