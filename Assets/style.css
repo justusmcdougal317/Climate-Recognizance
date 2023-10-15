@@ -27,7 +27,7 @@ input[type="text"]{
 
 input[type="submit"]{
   height: 50px;
-  width: 600px;
+  width: 100px;
   background: #e7e7e7;
   font-family: "Nunito",sans-serif
   font-weight: bold;
