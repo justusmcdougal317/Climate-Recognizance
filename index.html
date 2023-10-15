@@ -6,8 +6,22 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Climate Reconnaissance</title>
 <link rel="stylesheet" href="/Assets/style.css">
+<style>
+    /* Center the date and time */
+    .date-time-container {
+        text-align: center;
+    }
+    .date-time {
+        font-size: 24px; /* Increase the font size for better visibility */
+        margin-top: 20px; /* Add some top margin for spacing */
+    }
+</style>
 </head>
 <body>
+
+<div class="date-time-container">
+    <p id="date-time" class="date-time"></p>
+</div>
 
 <div class="input">
     <input type="text" id="cityInput" placeholder="Enter a city">
@@ -16,10 +30,25 @@
 
 <div class="display">
     <h1 id="cityName" class="name"></h1>
-    <p id="description" class="desc"></p> 
+    <p id="description" class="desc"></p>
     <p id="temperature" class="temp"></p>
 </div>
 
 <script src="/Assets/script.js"></script>
+
+<script>
+    function updateDateTime() {
+        const dateTimeElement = document.getElementById("date-time");
+        const now = new Date();
+        const dateTimeString = now.toLocaleString();
+        dateTimeElement.textContent = dateTimeString;
+    }
+
+   
+    setInterval(updateDateTime, 1000);
+    
+   
+    updateDateTime();
+</script>
 </body>
 </html>
