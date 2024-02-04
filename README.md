@@ -1,4 +1,5 @@
-# Climate Recognizance
+Run Instructions: Clone Repo, Run Live server, enjjoy app.
+ 
  The goal of this website is to enable users to check the weather in all cities in the western hemisphere, providing temperature and description for specification.
 This was achieved using 3 coding languages and 1 API. HTML, Javascript and css the api used was openweathermapapi.
 
