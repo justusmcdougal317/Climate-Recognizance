@@ -14,4 +14,5 @@ Added a fetch element to recieve information from the opnweather api upon enteri
 added link to api key url as well as personalized api key in correct format resulting in the data showing on the website.
 CSS was used to style the color of the background, used to customize all font sizes depicted on the screen.
 The only problem faced was linking local storage to save data used on website, this is the first goal of innovation I have for this website in the future.
-Deployable link to product : http://127.0.0.1:5500/index.html
+
+
